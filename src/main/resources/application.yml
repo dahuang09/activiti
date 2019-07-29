@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev
+    elasticsearch:
+            rest:
+              uris: http://localhost:9200
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/my_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: jacob
+  activiti:
+    check-process-definitions: false
+    database-schema-update: true
+    history-level: full
+    db-history-used: true
+
+mybatis:
+  mapper-locations: classpath:mybatis/*Mapper.xml
+  type-aliases-package: com.activiti.pojo
