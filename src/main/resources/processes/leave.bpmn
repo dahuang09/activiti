@@ -8,9 +8,7 @@
     <sequenceFlow id="_7" sourceRef="teamLead" targetRef="manager"/>
     <sequenceFlow id="_8" sourceRef="manager" targetRef="_3"/>
     <sequenceFlow id="_9" sourceRef="teamLead" targetRef="_3"/>
-    <userTask activiti:exclusive="true" id="apply" name="员工提交"/>
-    <sequenceFlow id="_4" sourceRef="_2" targetRef="apply"/>
-    <sequenceFlow id="_6" sourceRef="apply" targetRef="teamLead"/>
+    <sequenceFlow id="_5" sourceRef="_2" targetRef="teamLead"/>
     <textAnnotation id="_11" textFormat="text/plain">
       <text>N</text>
     </textAnnotation>
@@ -36,7 +34,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="teamLead" id="Shape-teamLead">
-        <dc:Bounds height="55.0" width="85.0" x="40.0" y="135.0"/>
+        <dc:Bounds height="55.0" width="85.0" x="40.0" y="65.0"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
@@ -65,28 +63,15 @@
           <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="apply" id="Shape-apply">
-        <dc:Bounds height="55.0" width="85.0" x="50.0" y="40.0"/>
-        <bpmndi:BPMNLabel>
-          <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge bpmnElement="_4" id="BPMNEdge__4" sourceElement="_2" targetElement="_5">
+      <bpmndi:BPMNEdge bpmnElement="_5" id="BPMNEdge__5" sourceElement="_2" targetElement="teamLead">
         <di:waypoint x="86.0" y="7.0"/>
-        <di:waypoint x="86.0" y="40.0"/>
-        <bpmndi:BPMNLabel>
-          <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_6" id="BPMNEdge__6" sourceElement="_5" targetElement="teamLead">
-        <di:waypoint x="87.5" y="95.0"/>
-        <di:waypoint x="87.5" y="135.0"/>
+        <di:waypoint x="86.0" y="65.0"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_7" id="BPMNEdge__7" sourceElement="teamLead" targetElement="manager">
-        <di:waypoint x="82.5" y="190.0"/>
+        <di:waypoint x="82.5" y="120.0"/>
         <di:waypoint x="82.5" y="245.0"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
@@ -100,7 +85,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_9" id="BPMNEdge__9" sourceElement="teamLead" targetElement="_3">
-        <di:waypoint x="125.0" y="162.5"/>
+        <di:waypoint x="125.0" y="92.5"/>
         <di:waypoint x="220.0" y="260.0"/>
         <di:waypoint x="97.0" y="386.0"/>
         <bpmndi:BPMNLabel>

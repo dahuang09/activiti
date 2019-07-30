@@ -49,7 +49,7 @@ public class ActivitiController {
     }
 
     @GetMapping("/start")
-    public String startActivity(@RequestParam String taskId) {
+    public String startActivity() {
         log.info("开启请假流程...");
         Map<String, Object> map = new HashMap<>();
         map.put("jobNumber","A1001");
