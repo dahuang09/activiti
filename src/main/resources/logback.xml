@@ -37,7 +37,7 @@
     <logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />
     <logger name="com.damon.service.user.UserService" level="DEBUG" />
 
-    <logger name="com.damon" level="DEBUG" additivity="true">
+    <logger name="com.activiti" level="DEBUG" additivity="true">
          <appender-ref ref="ASYNC" />
     </logger>
 

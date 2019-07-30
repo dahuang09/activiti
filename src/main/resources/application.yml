@@ -10,7 +10,7 @@ spring:
     username: root
     password: jacob
   activiti:
-    check-process-definitions: false
+    check-process-definitions: true
     database-schema-update: true
     history-level: full
     db-history-used: true
@@ -18,3 +18,7 @@ spring:
 mybatis:
   mapper-locations: classpath:mybatis/*Mapper.xml
   type-aliases-package: com.activiti.pojo
+
+logging:
+  level:
+    org.activiti.engine.impl.persistence.entity: trace

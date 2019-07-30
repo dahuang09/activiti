@@ -21,7 +21,7 @@ public class LeaveProcessTests {
     @Test
     public void testDeploy(){
 
-        // 部署流程文件
+        // 部署流程文件 act_re_deployment
         DeploymentBuilder builder = engineEngine.getRepositoryService().createDeployment();
         Deployment deploy = builder.addClasspathResource("processes/leave.bpmn").deploy();
         System.out.println("部署完成\n"+deploy.getId());
@@ -52,5 +52,11 @@ public class LeaveProcessTests {
     public void  testApprove(){
         String taskId = "7503" ;
         engineEngine.getTaskService().complete(taskId);
+    }
+
+    @Test
+    public void testStartByBiz() {
+        ProcessInstance processInstance = engineEngine.getRuntimeService().startProcessInstanceById("myProcess_1", "leave001");
+        System.out.println("流程启动成功，流程id:" + processInstance.getId());
     }
 }
