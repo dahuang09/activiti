@@ -59,6 +59,12 @@
             <version>7-201802-EA</version>       
         </dependency>
 
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-image-generator</artifactId>
+            <version>5.19.0.2</version>
+        </dependency>
+
         <!-- Thymeleaf依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
