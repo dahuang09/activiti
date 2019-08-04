@@ -10,10 +10,13 @@ spring:
     username: root
     password: jacob
   activiti:
+    database-schema: ACTIVITI
     check-process-definitions: true
     database-schema-update: true
     history-level: full
     db-history-used: true
+    deployment-name: vocation
+    process-definition-location-prefix:
 
 mybatis:
   mapper-locations: classpath:mybatis/*Mapper.xml

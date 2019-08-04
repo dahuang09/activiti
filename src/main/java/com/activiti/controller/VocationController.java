@@ -26,13 +26,16 @@ public class VocationController {
     @Autowired
     private ProcessEngine engineEngine;
 
-    private static final String instanceKey = "myProcess_1";
+    private static final String instanceKey = "vocation2";
 
 
     @GetMapping("/start")
     public String startActivity(@RequestParam String assignee, @RequestParam String day) {
         //启动流程实例，字符串"vacation"是BPMN模型文件里process元素的id
-        ProcessInstance processInstance = engineEngine.getRuntimeService().startProcessInstanceByKey("vocation", new HashMap<>());
+        Map<String, Object> map = new HashMap<>();
+//        map.put("assignee", assignee);
+//        map.put("busData","bus data");
+        ProcessInstance processInstance = engineEngine.getRuntimeService().startProcessInstanceByKey(instanceKey, map);
         //流程实例启动后，流程会跳转到请假申请节点
         Task task = engineEngine.getTaskService().createTaskQuery().processInstanceId(processInstance.getId()).singleResult();
         //设置请假申请任务的执行人
@@ -43,13 +46,15 @@ public class VocationController {
         Map<String, Object> args = new HashMap<>();
         args.put("day", day);
         args.put("reason", "请假");
+//        args.put("assignee", assignee);
         engineEngine.getTaskService().complete(task.getId(), args);
         return task.getId();
     }
 
     @GetMapping("/vocation")
-    public List<String> findTasksById(@RequestParam String userGroup) {
-        List<Task> taskList = engineEngine.getTaskService().createTaskQuery().processDefinitionKey("vocation").taskCandidateOrAssigned(userGroup).list();
+    public List<String> findTasksById(@RequestParam String assignee) {
+//        List<Task> taskList = engineEngine.getTaskService().createTaskQuery().processDefinitionKey("vocation").taskCandidateOrAssigned(userGroup).list();
+        List<Task> taskList = engineEngine.getTaskService().createTaskQuery().taskAssignee(assignee).list();
         List<String> taskInfos = new ArrayList<>();
         for (Task task : taskList) {
             Map<String, Object> variables = task.getProcessVariables();
